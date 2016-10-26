@@ -6,9 +6,9 @@
 @shift_by = 0
 
 def encrypt(clear_text, shift_by)
-    cipher_text = Array.new()
+  cipher_text = Array.new()
 	clear_text.split("").each do |char|
-		currentPos = @alphabet.index(char)
+	  currentPos = @alphabet.index(char)
 		newPos = currentPos + shift_by
 		if (newPos > @alphabet.size())
 			newPos % @alphabet.size()
