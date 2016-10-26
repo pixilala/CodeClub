@@ -6,9 +6,10 @@
 @shift_by = 0
 
 def encrypt(clear_text, shift_by)
+  puts clear_text
   cipher_text = Array.new()
 	clear_text.split("").each do |char|
-	  currentPos = @alphabet.index(char)
+	  currentPos = @alphabet.index(char).to_i
 		newPos = currentPos + shift_by
 		if (newPos > @alphabet.size())
 			newPos % @alphabet.size()
@@ -25,6 +26,7 @@ end
 puts "enter a rotation"
 @shift_by = gets.chomp().to_i
 puts "enter a message"
-puts "encrypted cipher_text:\n#{encrypt(gets.chomp(),@shift_by)}\nenter cipher text"
+clear_text = gets.chomp()
+puts "encrypted cipher_text:\n#{encrypt(clear_text,@shift_by)}\nenter cipher text"
 puts "decrypted plain text:\n #{decrypt(gets.chomp(),@shift_by)}"
 gets.chomp()
